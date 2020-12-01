@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
       <nav class="header-nav">
         <div class="header-nav-item">
-          <%= link_to 'ログアウト', user_registration_path, method: :delete, class: "button-pulse" %>  
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "button-pulse" %>  
         </div>
         <div class="header-nav-item">
           <%= link_to '料理投稿', new_user_registration_path, class: "button-pulse2" %>    

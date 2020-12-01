@@ -1,0 +1,24 @@
+.form-wrap-se {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+  height: 500px;
+}
+
+.session-btn {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.session-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 50px;
+  border-radius:70px / 30px;
+  text-align: center;
+}
