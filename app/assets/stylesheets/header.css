@@ -1,0 +1,136 @@
+.header-frame {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  height: 80px;
+  padding: 0 0.8em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  /* background-color: #fff; */
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  color: #fff;
+}
+
+.header-nav-item {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  /* background-color: #fff; */
+}
+
+.logo img {
+  width: 70px;
+}
+
+.header-button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: #FFFFCC;
+}
+
+.header-login {
+  color: #999;
+}
+
+.header-post {
+  font-weight: bold;
+  color: #fff;
+  background: #00b5ad;
+  border: 1px #00b5ad solid;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 480px) {
+  .header-post {
+    display: none;
+  }
+}
+
+.button-pulse {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #00b5ad solid;
+  background-color: #fff;
+  border-radius:70px / 30px;
+}
+
+.button-pulse2 {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #00b5ad solid;
+  background-color: #FFFFCC;
+  border-radius:70px / 30px;
+}
+
+.button-pulse:hover {
+  animation: pulse 1s;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 181, 173, 0.6); }
+  100% { box-shadow: 0 0 0 1.2em rgba(0, 0, 0, 0); }
+}
+
+.Search-form {
+  position: relative;
+}
+
+.Search-form-input {
+  box-sizing: border-box;
+  width: 150%;
+  height: 30px;
+  padding: 0 10px 0 34px;
+  margin: 5px 0;
+  font-size: 1em;
+  color: #333;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  outline: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
+
+.Search-form-input:focus {
+  border: 1px solid #00b5ad;
+}
+
+.Search-form-button {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  box-sizing: content-box;
+  width: 30px;
+  height: 40px;
+  padding: 0;
+  vertical-align: vertical-align;
+  pointer-events: none;
+  background: inherit;
+  border: 0;
+  opacity: 0.54;
+}
