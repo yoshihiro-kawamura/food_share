@@ -11,19 +11,18 @@ header {
   background-color: #e3927c;
   height: 80px;
 }
-.container {
-  display: flex;
-  height: 550px;
-}
+// .container {
+//   // display: flex;
+// }
 .main {
   background: pink;
-  width: 80%;
- 
+  width: 100%;
+  height: 550px; 
 }
-.side {
-  background: orange;
-  width: 20%;
-}
+// .side {
+//   background: orange;
+//   width: 20%;
+// }
 footer {
   background: plum;
   height: 150px;
