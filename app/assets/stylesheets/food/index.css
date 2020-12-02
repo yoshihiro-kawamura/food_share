@@ -1,0 +1,33 @@
+.container {
+  height: 100%;
+  /* background-color: black; */
+}
+
+.food-img {
+  width: 32vh;
+  height: 32vh;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.food-info {
+  background-color: orange;
+  color: black;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.food-name {
+  font-size: 2vh;
+}
+
+.food-lists {
+  justify-content: space-around;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+
