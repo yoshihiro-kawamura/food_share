@@ -10,6 +10,7 @@ class Food < ApplicationRecord
     validates :example
     validates :category_id
     validates :price
+    validates :image
     validates :user_id
   end
 end
