@@ -33,7 +33,7 @@
 }
 
 .food-box-img {
-  width: 35vh;
+  width: 44vh;
   height: 35vh;
   margin-top: 11px;
 }
@@ -55,7 +55,7 @@
   /* background-color: black; */
   width: 50%;
   height: 100%;
-  text-align: center;
+  text-align: right;
 }
 
 .show-edit {
@@ -75,7 +75,7 @@
 
 .detail-text {
   padding-top: 32px;
-  margin-left: 5px;
+  margin-left: 15px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -113,25 +113,45 @@
   height: 60px;
   text-align: center;
   padding-top: 22px;
-  font-size: 18px;
+  font-size: 26px;
+
 }
 
 /* エリア・予算 */
 .area-price {
-  background-color: yellow;
-  height: 120px;
+  /* background-color: yellow; */
+  height: 70px;
   width: 700px;
   display: flex;
 }
 /* エリア */
 .show-area {
-  background-color: red;
+  /* background-color: red; */
   height: 100%;
   width: 25%;
 }
+.show-category {
+  font-size: 18px;
+  padding-top: 10px;
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.show-prefecture-category {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.show-price-category {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
 /* 予算 */
 .show-price {
-  background-color: blue;
+  /* background-color: blue; */
   height: 100%;
   width: 25%;
 }
@@ -143,10 +163,12 @@
   width: 700px;
 }
 .show-menue {
-  background-color: red;
+  /* background-color: red; */
   height: 100%;
-  width: 60%;
+  width: 50%;
 }
+/* コメント */
+
 
 /* ボタン */
 .button-edit {
