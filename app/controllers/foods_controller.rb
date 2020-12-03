@@ -7,6 +7,10 @@ class FoodsController < ApplicationController
     @food = Food.new()
   end
 
+  def show
+    @food = Food.find(params[:id])
+  end
+
   def create
     @food = Food.new(food_params)
     if @food.save
