@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_114456) do
     t.string "name", null: false
     t.text "example", null: false
     t.integer "category_id", null: false
+    t.integer "prefecture_id", null: false
     t.integer "price", null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
