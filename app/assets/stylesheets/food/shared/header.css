@@ -26,6 +26,13 @@ header {
 
 .logo{
   color: #fff;
+  align-items: center;
+  font-size: 26px;
+}
+
+.header-logo {
+  float: right;
+  padding-top: 25px;
 }
 
 .header-nav-item {
