@@ -6,12 +6,14 @@
         <ul class="food-lists">
           <% @foods.each do |food| %>
             <li class="list">
-              <div class="food-img-tag">
-                <%= image_tag food.image , class: "food-img" %> 
-              </div>      
-              <div class="food-info">
-                <%= food.name %>
-              </div>
+              <%= link_to food_path(food.id) do %>
+                <div class="food-img-tag">
+                  <%= image_tag food.image , class: "food-img" %> 
+                </div>      
+                <div class="food-info">
+                  <%= food.name %>
+                </div>
+              <% end %>
             </li>
           <% end %>
         </ul>
