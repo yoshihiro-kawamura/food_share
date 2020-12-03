@@ -8,14 +8,14 @@
     <div class="action-example">
       <div class="delete-edit">
         <div class="show-delete">
-          <a href="#!" class="button-delete">BUTTON</a>
+          <a href="#!" class="button-delete">編集</a>
         </div>
         <div class="show-edit">
-          <a href="#!" class="button-edit">BUTTON</a>
+          <a href="#!" class="button-edit">削除</a>
         </div>
       </div>
       <div class="show-example">
-        <div class=detail-text>
+        <div class="detail-text">
           <%# <div class="text-example"> %>
             店舗説明
           <%# </div> %>
@@ -38,12 +38,28 @@
   </div>
   <div class="area-price">
     <div class="show-area">
+      <ul>
+        <li class="show-category">
+          エリア
+        </li>
+        <li class="show-prefecture-category">
+          <%= @food.prefecture.name %>
+        </li>
+      </ul>
     </div>
     <div class="show-price">
+      <ul>
+        <li class="show-category">
+          予算
+        </li>
+        <li class="show-price-category">
+          <%= converting_to_jpy(@food.price) %>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="food-menue">
-    <div class="show-menue">
+    <div class="show-comment">
     </div>
   </div>
 </div>
