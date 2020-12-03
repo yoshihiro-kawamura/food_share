@@ -34,6 +34,17 @@
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"food-category"}) %>
       </div>
     </div>
+    <%# エリア %>
+    <div class="foods-detail">
+      <div class="weight-bold-text"></div>
+      <div class="form">
+        <div class="weight-bold-text">
+          エリア
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"food-category"}) %>
+      </div>
+    </div>
 
     <%# 目安価格 %>
     <div class="sell-price">
