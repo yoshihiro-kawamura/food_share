@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :foods do
     resources :comments, only: [:show, :create]
   end
+  root 'users#index'  
+  resources :users, only: :new
 end
