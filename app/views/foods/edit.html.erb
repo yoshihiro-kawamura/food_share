@@ -1,0 +1,80 @@
+<div class="foods-sell-contents">
+<%= render "shared/header" %>
+  <div class="foods-sell-main">
+  <%= form_with(model: @food, url: food_path, local: true) do |f| %>
+    <h2 class="foods-sell-title">店舗の情報を入力</h2>
+    <%= render 'shared/error_messages', model: f.object %>
+    
+    <%# 店舗名 %>
+    <div class="new-foods">
+      <div class="weight-bold-text">
+        店舗名
+      </div>
+      <%= f.text_area :name, class:"foods-text", id:"item-name", placeholder:"店舗名", maxlength:"40" %>
+      <%# 商品説明 %>
+      <div class="foods-explain">
+        <div class="weight-bold-text">
+          店舗の説明
+        </div>
+        <%= f.text_area :example, class:"foods-text", id:"item-info", placeholder:"あいうえお" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <%# 店舗の詳細 %>
+    <div class="foods-detail">
+      <div class="weight-bold-text">店舗の詳細</div>
+    <%# カテゴリー %>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"food-category"}) %>
+      </div>
+    </div>
+    <%# エリア %>
+    <div class="foods-detail">
+      <div class="weight-bold-text"></div>
+      <div class="form">
+        <div class="weight-bold-text">
+          エリア
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"food-category"}) %>
+      </div>
+    </div>
+
+    <%# 目安価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>目安予算</span>
+      </div>
+      <div class="price-content">
+        <div class="price-text">
+          <span>価格</span>
+        </div>
+        <span class="sell-yen">¥</span>
+        <%= f.text_field :price, class:"price-input", id:"food-price", placeholder:"例）300" %>
+      </div>
+    </div>
+
+    <%# 画像投稿 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        店舗・料理画像
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"food-image" %>
+      </div>
+    </div>
+
+    <%# 送信ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "編集を投稿する",class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= render "shared/footer" %>
