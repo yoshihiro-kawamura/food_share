@@ -132,6 +132,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .price-content {
@@ -151,12 +152,14 @@
 
 .sell-yen {
   font-size: 18px;
+  /* margin-bottom: 50px; */
 }
 
 .price-input {
   height: 30px;
   text-align: right;
   padding-right: 10px;
+
 }
 
 /* 下部ボタン */
