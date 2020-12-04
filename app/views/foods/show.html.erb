@@ -7,12 +7,16 @@
       </div>
       <div class="action-example">
         <div class="delete-edit">
-          <div class="show-delete">
-            <a href="#!" class="button-delete">編集</a>
-          </div>
-          <div class="show-edit">
-            <a href="#!" class="button-edit">削除</a>
-          </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == @food.user.id %>
+              <div class="show-delete">
+                <%= link_to '編集', edit_food_path(@food.id), method: :get, class: "button-delete" %>
+              </div>
+              <div class="show-edit">
+                <%= link_to '削除', food_path(@food.id) , method: :delete, class:'button-edit' %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
         <div class="show-example">
           <div class="detail-text">

@@ -13,6 +13,16 @@ class FoodsController < ApplicationController
     @comments = Comment.includes(:user).order('created_at DESC')
   end
 
+  def destroy
+    @food = Food.find(params[:id])
+    if @food.user == current_user
+      @food.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   def create
     @food = Food.new(food_params)
     if @food.save
