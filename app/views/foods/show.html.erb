@@ -1,65 +1,78 @@
 <div class="foods-show-contents">
 <%= render "shared/header" %>
   <div class="foods-show-main">
-  <div class="img-example">
-    <div class="show-img">
-      <%= image_tag @food.image ,class:"food-box-img" %>
-    </div>
-    <div class="action-example">
-      <div class="delete-edit">
-        <div class="show-delete">
-          <a href="#!" class="button-delete">編集</a>
+    <div class="img-example">
+      <div class="show-img">
+        <%= image_tag @food.image ,class:"food-box-img" %>
+      </div>
+      <div class="action-example">
+        <div class="delete-edit">
+          <div class="show-delete">
+            <a href="#!" class="button-delete">編集</a>
+          </div>
+          <div class="show-edit">
+            <a href="#!" class="button-edit">削除</a>
+          </div>
         </div>
-        <div class="show-edit">
-          <a href="#!" class="button-edit">削除</a>
+        <div class="show-example">
+          <div class="detail-text">
+            <%# <div class="text-example"> %>
+              店舗説明
+            <%# </div> %>
+          </div>
+          <div class="detail-value">
+            <%= @food.example %>
+          </div>
         </div>
       </div>
-      <div class="show-example">
-        <div class="detail-text">
-          <%# <div class="text-example"> %>
-            店舗説明
-          <%# </div> %>
+    </div>
+    <div class="food-shop">
+      <div class="show-name"> 
+        <div class="shop-text">
+          店舗名
         </div>
-        <div class="detail-value">
-          <%= @food.example %>
+        <div class="shop-name">
+          <%= @food.name %>
         </div>
       </div>
     </div>
-  </div>
-  <div class="food-shop">
-    <div class="show-name"> 
-      <div class="shop-text">
-        店舗名
+    <div class="area-price">
+      <div class="show-area">
+        <ul>
+          <li class="show-category">
+            エリア
+          </li>
+          <li class="show-prefecture-category">
+            <%= @food.prefecture.name %>
+          </li>
+        </ul>
       </div>
-      <div class="shop-name">
-        <%= @food.name %>
+      <div class="show-price">
+        <ul>
+          <li class="show-category">
+            予算
+          </li>
+          <li class="show-price-category">
+            <%= converting_to_jpy(@food.price) %>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="area-price">
-    <div class="show-area">
-      <ul>
-        <li class="show-category">
-          エリア
-        </li>
-        <li class="show-prefecture-category">
-          <%= @food.prefecture.name %>
-        </li>
-      </ul>
-    </div>
-    <div class="show-price">
-      <ul>
-        <li class="show-category">
-          予算
-        </li>
-        <li class="show-price-category">
-          <%= converting_to_jpy(@food.price) %>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="food-menue">
-    <div class="show-comment">
+    <div class="food-menue">
+      <div class="show-comment">
+        <%= form_with(model:[@food, @comment], local: true) do |f| %>
+          <%= f.text_field :comment, class:"comment-btn"%>
+          <%= f.submit "コメント送信", id:"comment-btn" %>
+        <% end %>
+      </div>
+      <div id="comments", class="comments-field">
+        <% @comments.each do |comment| %>
+          <li class="comments_list ">
+            <%= comment.comment %>
+            <%= comment.user.nickname %>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
