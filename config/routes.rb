@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "foods#index"
-  resources :foods, only: [:index, :new, :create, :show]
+  resources :foods do
+    resources :comments, only: [:show, :create]
+  end
 end

@@ -8,12 +8,14 @@
   align-items: center;
   flex-direction: column;
   min-width: 500px;
+  /* min-height: auto; */
 }
 .foods-show-main {
   background-color: #FFF;
   min-width: 450px;
   padding: 10vh 12vw;
   align-items: center;
+  /* min-height: auto; */
 }
 
 /* 画像・説明 */
@@ -158,18 +160,27 @@
 
 /* メニュー */
 .food-menue {
-  background-color: yellow;
-  height: 400px;
+  /* background-color: yellow;d */
   width: 700px;
 }
-.show-menue {
+.show-comment {
   /* background-color: red; */
-  height: 100%;
   width: 50%;
 }
 /* コメント */
-
-
+.comments-field {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid black;
+  min-height: 400px;
+}
+.comment-btn {
+  align-items: right;
+}
+.comments_list {
+  list-style: none;
+  padding: 5px;
+}
 /* ボタン */
 .button-edit {
   position: relative;
