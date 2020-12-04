@@ -4,5 +4,7 @@
   color: #FFF;
   background-color: #e3927c;
   text-align: center;
+  /* position: fixed;←絶対位置 */
+  /* bottom: 0; 下に固定; */
 }
 
