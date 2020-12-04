@@ -3,6 +3,7 @@ class Food < ApplicationRecord
   belongs_to :user
   belongs_to :category
   belongs_to :prefecture
+  has_many   :comments
   has_one_attached :image
 
   with_options presence: true do
