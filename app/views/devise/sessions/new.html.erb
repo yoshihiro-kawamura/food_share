@@ -6,6 +6,10 @@
         ログイン情報入力
       </h1>
     </div>
+    <div class="sns-btn">
+      <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class:"button-sns-line" %>
+      <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class:"button-sns-line" %>
+    </div>
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">メールアドレス</label>
