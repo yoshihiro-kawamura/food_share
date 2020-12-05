@@ -1,10 +1,12 @@
 <div class="foods-show-contents">
 <%= render "shared/header" %>
   <div class="foods-show-main">
+  <%# 写真 %>
     <div class="img-example">
       <div class="show-img">
         <%= image_tag @food.image ,class:"food-box-img" %>
       </div>
+      <%# 編集・削除ボタン %>
       <div class="action-example">
         <div class="delete-edit">
           <% if user_signed_in? %>
@@ -18,11 +20,10 @@
             <% end %>
           <% end %>
         </div>
+        <%# 店舗説明 %>
         <div class="show-example">
           <div class="detail-text">
-            <%# <div class="text-example"> %>
-              店舗説明
-            <%# </div> %>
+              店舗の感想
           </div>
           <div class="detail-value">
             <%= @food.example %>
@@ -30,6 +31,7 @@
         </div>
       </div>
     </div>
+    <%# 店舗名 %>
     <div class="food-shop">
       <div class="show-name"> 
         <div class="shop-text">
@@ -40,6 +42,7 @@
         </div>
       </div>
     </div>
+    <%# エリアと予算とおすすめ一品！ %>
     <div class="area-price">
       <div class="show-area">
         <ul>
@@ -61,15 +64,27 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="food-menue">
-      <div class="show-comment">
-        <%= form_with(model:[@food, @comment], local: true) do |f| %>
-          <%= f.text_field :comment, class:"comment-btn"%>
-          <%= f.submit "コメント送信", id:"comment-btn" %>
-        <% end %>
+      <div class="show-price">
+        <ul>
+          <li class="show-category">
+            おすすめ一品！
+          </li>
+          <li class="show-price-category">
+            <%= @food.menue %>
+          </li>
+        </ul>
       </div>
+    </div>
+    <%# コメント機能 %>
+    <div class="food-menue">
+      <%= form_with(model:[@food, @comment], local: true) do |f| %>
+        <div class="show-comment">
+          <%= f.text_field :comment, class:"comment-text",  placeholder:"例）こんにちは"%>
+          <%= f.submit "コメント送信", id:"comment-btn", class:"comment-btn" %>
+        </div>
+      <% end %>
       <div id="comments", class="comments-field">
+        <h3 class="comment-list-text">＜ コメント一覧 ＞</h3>
         <% @comments.each do |comment| %>
           <li class="comments_list ">
             <%= comment.comment %>
