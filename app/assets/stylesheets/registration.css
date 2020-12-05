@@ -25,7 +25,6 @@
 .registration-main {
   width: 100%;
   min-width: 800px;
-  height: 100vh;
   background-color: #f8eedd;
   display: flex;
   justify-content: center;
@@ -35,7 +34,7 @@
   width: 50%;
   background-color: white;
   padding-bottom: 70px;
-  height: 700px;
+  min-height: 700px;
 }
 
 .form-header {
@@ -169,3 +168,79 @@
   text-align: center;
 }
 
+.facebook-btn {
+  background-color: #0099FF;
+  padding: 3px;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.button-sns-line {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 1em;
+  color: #00b5ad;
+  font-weight: bold;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* 上は特に入力しなくても動くが、範囲を示している */
+/* 横のエフェクトに対しての記載 */
+@keyframes widthChange {
+  0% {
+    width: 0%;
+    border-color: #00b5ad;
+  }
+
+  100% {
+    width: 100%;
+    border-color: #00b5ad;
+  }
+}
+/* 縦線に対してのエフェクト */
+@keyframes heightChange {
+  0% {
+    height: 1px;
+  }
+  
+  100% {
+    height: 100%;
+  }
+}
+
+.button-sns-line::before {
+  /* 枠の位置設定 */
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 0;
+  height: 1px;
+  content: "";
+  border-top: 1px transparent solid;
+  border-right: 1px transparent solid;
+}
+
+.button-sns-line:hover::before {
+  animation: widthChange 0.2s forwards, heightChange 0.2s 0.2s forwards;
+}
+
+.button-sns-line::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  border-bottom: 1px transparent solid;
+  border-left: 1px transparent solid;
+}
+
+.button-sns-line:hover::after {
+  animation: widthChange 0.2s forwards, heightChange 0.2s 0.2s forwards;
+}
+
+.sns-btn {
+  /* margin-left: 22px; */
+  text-align: center;
+  margin-bottom: 15px;
+}

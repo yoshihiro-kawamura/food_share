@@ -33,6 +33,7 @@ header {
 .header-logo {
   float: right;
   padding-top: 25px;
+  padding-left: 10px;
 }
 
 .header-nav-item {
